@@ -1,18 +1,7 @@
 #include<iostream>
 #include<initializer_list>
 using namespace std;
-/*
-debug:
-class µÄpublic¼Ì³ĞÊ±£¬Ã»ÓĞÔÚ»ùÀàºóĞ´<T>
 
-ÎóÓÃinitializer_listµÄ[]£¬Êµ¼ÊÉÏ²¢Ã»ÓĞÕâÑùµÄÖØÔØ¡£Ó¦¸ÃÊ¹ÓÃconst int * p=list.begin();
-
-Îö¹¹º¯ÊıĞ´´íÁË£¬Ò»ÊÇÍü¼ÇĞ´i++£¬¶şÊÇÍü¼Ç±ß½çÌõ¼ş£¬lastNodeĞèÒªµ¥¶Àdelete¡£
-
-insertºÍeraseº¯ÊıĞ´´íÁË£¬Ã»ÓĞ¿¼ÂÇµ½theIndexÊÇfirstNodeºÍlastNodeµÄÇé¿ö£¬ĞèÒªµ¥¶ÀÌÖÂÛ¡£
-Í¬Ê±»¹ÍüÁË¼Ói++;
-
-*/
 template<class T>
 class linear_list {
 public:
@@ -144,8 +133,8 @@ doublyLinkedList<T>::~doublyLinkedList() {
 template<class T>
 void doublyLinkedList<T>::check_index(int i) {
 	if (i<0 || i>(int)listSize) {
-		clog << "·ÃÎÊÒòÔ½½ç±»×èÖ¹£ºerror!";
-		throw runtime_error{ "·ÃÎÊÔ½½ç" };
+		clog << "è®¿é—®å› è¶Šç•Œè¢«é˜»æ­¢ï¼šerror!";
+		throw runtime_error{ "è®¿é—®è¶Šç•Œ" };
 	}
 }
 template<class T>
@@ -189,8 +178,8 @@ template<class T>
 void doublyLinkedList<T>::erase(int theIndex) {
 	check_index(theIndex);
 	if (listSize == 0) {
-		clog << "erase º¯Êı³ö´í£¬²»ÄÜeraseÒ»¸ö´óĞ¡Îª0µÄ¶ÔÏó";
-		throw runtime_error{ "erase º¯Êı³ö´í" };
+		clog << "erase å‡½æ•°å‡ºé”™ï¼Œä¸èƒ½eraseä¸€ä¸ªå¤§å°ä¸º0çš„å¯¹è±¡";
+		throw runtime_error{ "erase å‡½æ•°å‡ºé”™" };
 	}
 	if (listSize == 1) {
 		delete firstNode;
