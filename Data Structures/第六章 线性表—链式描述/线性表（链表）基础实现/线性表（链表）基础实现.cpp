@@ -32,7 +32,7 @@ protected:
 	int listSize;
 	void check_index(int i) {
 		if (i<0 || i>listSize)
-			throw runtime_error{ "Êý×é·ÃÎÊÒç³ö" };
+			throw runtime_error{ "æ•°ç»„è®¿é—®æº¢å‡º" };
 	}
 public:
 	class iterator {
@@ -73,7 +73,7 @@ public:
 	}
 	chain(int initialnum = 0) {
 		if (initialnum < 0)
-			throw runtime_error{ "³õÊ¼»¯³ö´í" };
+			throw runtime_error{ "åˆå§‹åŒ–å‡ºé”™" };
 		firstNode = nullptr;
 		listSize = 0;
 	}
@@ -85,7 +85,7 @@ public:
 		}
 		chainNode<T>* des = firstNode = new chainNode<T>(t.firstNode->element);
 		chainNode<T>* source = t.firstNode->next;
-		while (source->next != nullptr) {
+		while (source!= nullptr) {
 			des->next = new chainNode<T>(source->element);
 			des = des->next;
 			source = source->next;
@@ -144,7 +144,7 @@ public:
 	void erase(int theIndex)override {
 		check_index(theIndex);
 		if (listSize == 0)
-			throw runtime_error{ "²»ÄÜerase¿ÕÁ´±í" };
+			throw runtime_error{ "ä¸èƒ½eraseç©ºé“¾è¡¨" };
 		if (theIndex == 0) {
 			auto p = firstNode;
 			firstNode = firstNode->next;
