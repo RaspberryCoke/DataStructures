@@ -84,24 +84,23 @@ public:
 		return iterator(headerNode->next);
 	}
 	iterator end() {
-		return iterator(nullptr);//不确定
+		return iterator(nullptr);//虏禄脠路露篓
 	}
 };
 template<class T>
 CircularListWithHeader<T>::~CircularListWithHeader() {
-	auto temp = headerNode;
 	chainNode<T>* t;
-	auto p = headerNode;
-	while (p != temp) {
+	auto p = headerNode->next;
+	while (p != headNode) {
 		t = p->next;
 		delete p;
 		p = t;
-	}
+	}delete headerNode;
 }
 template<class T>
 void CircularListWithHeader<T>::check_index(int theIndex) {
 	if (theIndex < 0 || theIndex >= listSize)
-		throw runtime_error{ "访问溢出" };
+		throw runtime_error{ "路脙脦脢脪莽鲁枚" };
 }
 template<class T>
 CircularListWithHeader<T>::CircularListWithHeader(int initialNum ) {
